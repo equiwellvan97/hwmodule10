@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Интернет-магазин</title>
+  </head>
+  <body>
+    <header>
+      <h1>Интернет-магазин одежды</h1>
+    </header>
+    <main>
+      <section class="add_product">
+        <h2>Добавьте товар</h2>
+        <form id="form_add">
+          <input
+            type="text"
+            placeholder="Введите название товара"
+            id="text_name"
+          />
+          <input
+            type="number"
+            placeholder="Введите стоимость товара"
+            id="price"
+          />
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Введите описание"
+          ></textarea>
+          <input
+            type="text"
+            placeholder="Введите категорию"
+            id="newCategory"
+            list="all_categories"
+          />
+          <datalist id="all_categories">
+            <option value="men's clothing"></option>
+            <option value="jewelery"></option>
+            <option value="electronics"></option>
+            <option value="women's clothing"></option>
+          </datalist>
+          <input type="submit" class="button_add" value="Добавить товар" />
+        </form>
+      </section>
+      <br />
+
+      <section class="filter_block">
+        <h2>Фильтрация</h2>
+        <form>
+          <label for="filter_products"></label>
+          <select
+            name="products"
+            id="filter_products"
+            onchange="filterProducts()"
+          >
+            <option value="list">Показать все категории</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="jewelery">jewelery</option>
+            <option value="electronics">electronics</option>
+            <option value="women's clothing">women's clothing</option>
+          </select>
+        </form>
+      </section>
+
+      <section class="list_products">
+        <h2>Товары</h2>
+        <ul class="newList"></ul>
+        <button class="load_more">Загрузить еще</button>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
